@@ -1,0 +1,46 @@
+.page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.container {
+  @apply flex flex-col justify-start items-start; 
+  border: 2px solid #000;
+  border-radius: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  max-width: 40vw; 
+  padding: 40px;
+}
+
+h1 {
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.login-btn{
+  @apply bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-800; 
+  width: 33vw;
+  height: 6vh;
+  text-transform: uppercase;
+}
+
+.input{
+  width: 33vw;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 600px) {
+  .container {
+    max-width: 100%;
+  }
+}
+
+.mat-input-wrapper{
+  width:400px !important;
+}
+

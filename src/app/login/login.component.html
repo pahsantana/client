@@ -1,0 +1,33 @@
+<div class="page">
+<div class="container">
+  <h2>Login</h2>
+  <form name="form" (ngSubmit)="onLogin()" #f="ngForm" [formGroup]="form">
+    <mat-error *ngIf="submitted && form.invalid">
+      Dados incorretos. Por favor, revise seus dados e tente novamente.
+    </mat-error>
+    <mat-error *ngIf="!form.invalid && submitted && isLoginFailed">
+      Senha ou usuário incorretos, revise suas credenciais!
+    </mat-error>
+    <mat-form-field appearance="outline" class="input">
+      <input matInput type="email" placeholder="E-mail" required formControlName="email" id="email" class="login-error"/>
+      <mat-error *ngIf="submitted && form.get('email')?.hasError('required')">
+        Por favor, digite seu usuário (e-mail de cadastro).
+      </mat-error>
+      <mat-error *ngIf="submitted && form.get('email')?.hasError('email')">
+        Digite um e-mail válido.
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="input">
+      <input type="{{ showPassword ? 'text' : 'password' }}" matInput placeholder="Senha" required formControlName="password" id="password" class="login-error"/>
+      <button mat-button matSuffix (click)="togglePasswordVisibility()">
+        <mat-icon matSuffix *ngIf="!showPassword">visibility_off</mat-icon>
+        <mat-icon matSuffix *ngIf="showPassword">visibility</mat-icon>
+      </button>
+      <mat-error *ngIf="submitted && form.get('password')?.hasError('required')">
+        Digite uma senha.
+      </mat-error>
+    </mat-form-field>
+    <button type="submit" class="login-btn">Entrar</button>
+  </form>
+</div>
+</div>
