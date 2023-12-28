@@ -1,0 +1,68 @@
+<!-- create-clinic.component.html -->
+
+<div class="create-entity-container">
+  <h2>Criar Entidade</h2>
+  <form class="form-container" #f="ngForm" [formGroup]="formData" (ngSubmit)="submitForm()">
+    <div class="form-group">
+      <mat-form-field appearance="outline" class="input" class="half-width">
+        <input matInput type="text" id="name" name="name" placeholder="Nome" formControlName="name" required>
+        <mat-error *ngIf="formData.get('name')?.hasError('maxlength')">
+          Tamanho máximo 10 caracteres
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="input" class="half-width">
+        <input matInput type="text" id="socialReason" name="socialReason" placeholder="Razão social" formControlName="socialReason" required>
+        <mat-error *ngIf="formData.get('socialReason')?.hasError('required')">
+          Campo obrigatório
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="input">
+        <input matInput mask="00.000.000/0000-00" type="text" id="cnpj" name="cnpj" formControlName="cnpj" placeholder="CNPJ" required>
+      </mat-form-field>
+    </div>
+
+    <div class="form-group">
+      <mat-form-field class="input">
+        <mat-select placeholder="Especialidades" [formControl]="getSpecialtiesControl()" multiple>
+          <mat-select-trigger>
+            {{ getSpecialtiesValue() ? getSpecialtiesValue().slice(0, 2) || '' : '' }}
+            <ng-container *ngIf="getSpecialtiesValue() && getSpecialtiesValue().length > 2">
+              <span class="example-additional-selection">
+                +{{ getSpecialtiesValue().length - 2 }} 
+              </span>
+            </ng-container>
+          </mat-select-trigger>
+          <mat-option *ngFor="let specialty of specialtiesList" [value]="specialty">{{specialty}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      
+      
+
+      <mat-form-field appearance="outline" class="input">
+        <mat-select id="region" name="region" placeholder="Região" formControlName="region">
+          <mat-option *ngFor="let region of regions" [value]="region.value">{{ region.label }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="form-group">
+      <mat-form-field class="input">
+        <input matInput [matDatepicker]="picker" placeholder="Data de inauguração" formControlName="inaugurationDate">
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+      <div class="checkbox-group">
+        <label for="isActive" class="checkbox-label"><b style="font-size: 1.5em;">Ativa</b></label>
+        <mat-checkbox id="isActive" name="isActive" formControlName="isActive"></mat-checkbox>
+      </div>
+    </div>
+
+      <div class="button-group">
+        <button mat-button type="button" (click)="cancel()">Cancelar</button>
+        <button mat-raised-button type="submit" color="primary">Salvar</button>
+      </div>
+  </form>
+</div>

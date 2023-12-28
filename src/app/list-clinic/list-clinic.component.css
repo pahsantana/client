@@ -1,0 +1,57 @@
+.page-content {
+    @apply flex flex-col w-full mx-auto;
+  }
+  
+  .page-header {
+    @apply flex justify-between items-center p-4 sm:p-8;
+  }
+  
+  .page-header h2 {
+    @apply m-0;
+  }
+  
+  .page-header button {
+    @apply ml-2 sm:ml-4;
+  }
+  
+  table {
+    @apply border border-solid border-gray-300 rounded overflow-hidden shadow-md;
+    width: 100%;
+    overflow-x: auto;
+  }
+  
+  .mat-elevation-z8 {
+    @apply flex-grow p-4 sm:p-8 m-4 sm:m-8 flex flex-col items-center rounded-lg;
+  }
+  
+  .mat-elevation-z8 table {
+    @apply w-full overflow-x-auto;
+  }
+  
+  .mat-elevation-z8 .mat-paginator {
+    @apply flex justify-center mt-4 sm:mt-8 mb-4;
+  }
+  
+  .mat-elevation-z8 td.mat-cell {
+    @apply flex justify-between items-center;
+  }
+  
+  .search-container {
+    @apply flex flex-col sm:flex-row justify-between items-center mb-4 sm:mb-8 w-full text-sm p-0;
+  }
+  
+  .search-container mat-form-field {
+    @apply flex-grow mb-4 sm:mb-0 mr-0 sm:mr-10;
+  }
+  
+  .mat-elevation-z8 .search-container {
+    @apply flex justify-center items-center;
+  }
+  
+  .search-container mat-form-field {
+    @apply m-0;
+  }
+
+  .table-container {
+    @apply w-full overflow-x-auto;
+  }

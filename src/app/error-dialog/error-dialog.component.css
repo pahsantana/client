@@ -1,0 +1,17 @@
+.dialog-container {
+    padding: 10vh;
+    height: 50vh;
+  }
+
+    .header-container {
+      display: flex;
+      align-items: center;
+    }
+
+    h2 {
+      margin: 0; 
+    }
+
+    .close-btn{
+      margin-left: auto;
+    }

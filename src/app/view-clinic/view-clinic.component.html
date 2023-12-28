@@ -1,0 +1,61 @@
+<div class="clinic-details-container">
+  <div class="header">
+    <h2>Visualizar entidade</h2>
+    <button mat-button class="edit-button" (click)="editClinic()">editar</button>
+  </div>
+  <div class="clinic-data">
+    <div class="data-row">
+      <div class="data-item">
+        <strong>Nome fantasia</strong>
+        <div class="data-value">{{ clinic.name }}</div>
+      </div>
+    </div>
+
+    <div class="data-row">
+      <div class="data-item">
+        <strong>Razão social</strong>
+        <div class="data-value">{{ clinic.socialReason }}</div>
+      </div>
+    </div>
+
+    <div class="data-row">
+      <div class="data-item">
+        <strong>CNPJ</strong>
+        <div class="data-value">{{ clinic.cnpj | cnpjMask }}</div>
+      </div>
+    </div>
+
+    <div class="data-row">
+      <div class="data-item">
+        <strong>Especialidades</strong>
+        <div class="data-value">
+          {{ getSpecialtiesDisplay(clinic.specialties) }}
+        </div>
+      </div>
+    </div>
+
+    <div class="data-row">
+      <div class="data-item">
+        <strong>Regional</strong>
+        <div class="data-value">{{ clinic.region }}</div>
+      </div>
+    </div>
+
+    <div class="data-row">
+      <div class="data-item">
+        <strong>Data inauguração</strong>
+        <div class="data-value">{{ clinic.inaugurationDate | dateFormat }}</div>
+      </div>
+    </div>
+
+    <div class="data-row">
+      <div class="data-item">
+        <strong>Ativa</strong>
+        <div class="data-value">{{ clinic.active ? 'Sim' : 'Não' }}</div>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <button mat-button class="back-button" color="primary" (click)="back()">Voltar</button>
+  </div>
+</div>

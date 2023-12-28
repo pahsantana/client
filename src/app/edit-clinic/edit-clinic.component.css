@@ -1,0 +1,56 @@
+.create-entity-container {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+  }
+  
+  h2 {
+    margin-bottom: 8vh;
+  }
+  
+  .form-container {
+    width: 100%;
+  }
+  
+  .form-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-bottom: 2.5vh;
+  }
+  
+  .additional-selection {
+    opacity: 0.75;
+    font-size: 0.75em;
+  }
+  
+  .input {
+    width: 45vw;
+    margin-right: 10px;
+  }
+  
+  button {
+    margin-right: 10px;
+    border: 1px solid black;
+  }
+  
+  
+  .checkbox-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .checkbox-group h3 {
+    margin-right: 10px; 
+  }
+  
+  .button-group {
+    display: flex;
+    justify-content: flex-end; 
+    align-items: flex-end;
+    gap: 20px;
+    margin-top: 15vh; 
+  }
+  

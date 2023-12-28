@@ -1,0 +1,50 @@
+.clinic-details-container {
+    padding: 16px;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  .edit-button {
+    background-color: blue; 
+    color: white;
+    border: 1px solid black;
+    padding: 8px 16px; 
+    border-radius: 4px; 
+  }
+  
+  .clinic-data {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .data-row {
+    width: calc(33.33% - 16px);
+    margin-right: 16px;
+    margin-bottom: 16px;
+  }
+  
+  .data-row div {
+    margin-bottom: 20px;
+  }
+
+  .data-value{
+    margin-top: 8px;
+  }
+  .footer {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .back-button {
+    background-color: white;
+    color: #000;
+    border: 1px solid #000; 
+    padding: 8px 16px;
+    border-radius: 4px;
+  }
+  
